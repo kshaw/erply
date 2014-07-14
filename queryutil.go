@@ -6,10 +6,10 @@ import(
   "net/http"
 )
 
-func _makeQueryString(queryParams map[string]string) (queryString string) {
+func _makeQueryString(queryParams map[string]string, request string) (queryString string) {
+  queryParams["clientCode"] = config["clientCode"]
   queryParams["username"] = config["username"]
   queryParams["password"] = config["password"]
-  queryParams["clientCode"] = config["clientCode"]
   if (request != "verifyUser") {
     queryParams["sessionKey"] = sessionKey
   }
