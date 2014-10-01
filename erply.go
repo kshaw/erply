@@ -23,6 +23,11 @@ func Get(request string, queryParams map[string]string) (res *http.Response, err
   return c._get(fullPath)
 }
 
+func Serialize(res *http.Response)(response Response){
+  response = _serializeResponse(res)
+  return response
+}
+
 func _getSessionKey() (string){
   var queryParams = make(map[string]string)
   res, err := Get("verifyUser", queryParams)
