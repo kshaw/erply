@@ -14,7 +14,9 @@
         "clientCode": "clientCode",
       }
 
-      queryParams := map[string]string{}
+      queryParams := map[string]string{
+        'abv': '6',
+      }
       res, err := erply.Get("getProducts", queryParams)
     }
 
